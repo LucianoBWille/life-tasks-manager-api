@@ -1,0 +1,49 @@
+@url=http://localhost:3333
+@ACCESS-TOKEN=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiZnVsYW5vZGV0YWwyQGdtYWlsLmNvbSIsImlhdCI6MTcwMjU3MDM4NSwiZXhwIjoxNzAyNjU2Nzg1fQ.odTmPv87oxJdV6cZ9sn5fWr-907jBbJ_YvfZwKlenf4
+
+### testar signup
+POST {{url}}/auth/signup
+Content-Type: application/json
+
+{
+    "email": "fulanodetal2@gmail.com",
+    "password": "123456",
+    "name": "Fulano de Tal"
+}
+
+### testar signup
+POST {{url}}/auth/signup
+Content-Type: application/json
+
+{
+    "email": "emailinvalido",
+    "password": "123456"
+}
+
+### testar signin
+POST {{url}}/auth/signin
+Content-Type: application/json
+
+{
+    "email": "fulanodetal2@gmail.com",
+    "password": "123456",
+    "name": "Fulano de Tal"
+}
+
+### testar signin
+POST {{url}}/auth/signin
+Content-Type: application/json
+
+{
+    "email": "fulanodetal2@gmail.com",
+    "password": "wrongpassword",
+    "name": "Fulano de Tal"
+}
+
+### get me
+GET {{url}}/users/me
+Authorization: {{ACCESS-TOKEN}}
+
+### delete me
+DELETE  {{url}}/users/me
+Authorization: {{ACCESS-TOKEN}}
